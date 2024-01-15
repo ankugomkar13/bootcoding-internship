@@ -2,6 +2,7 @@ import java.util.*;
  public class StudentManagementSystem implements StudentInfo {
      List<Student> studentslist = new ArrayList<>();
 
+
      // Add method for adding a student
      public void addStudent(Student student) {
          studentslist.add(student);
