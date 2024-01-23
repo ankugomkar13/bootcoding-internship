@@ -21,15 +21,44 @@ public class Main {
         studentMap.addStudent(new Student(stdid,name,grade));
         }
 
-        studentMap.viewStudent();
 
-        studentMap.updateStudent();
+        System.out.println("Enter 1 for view Student");
+        System.out.println("Enter 2 for update Student");
+        System.out.println("Enter 3 for delete Student");
+        System.out.println("Enter 4 for Search Student by id");
+        System.out.println("Enter 5 for Search Student by Grade");
 
-        studentMap.deleteStdid();
+        while(true)
+        {
+          System.out.println("\n\nEnter Your choice which operation you want ");
+          int choice = sc.nextInt();
 
-        studentMap.searchbyid();
+          switch (choice) {
 
-        studentMap.searchStudentsByGrade();
+            case 1:
+              studentMap.viewStudent();
+              break;
+            case 2:
+              studentMap.updateStudent();
+              break;
+            case 3:
+              studentMap.deleteStdid();
+              break;
+            case 4:
+              studentMap.searchbyid();
+              break;
+            case 5:
+              studentMap.searchStudentsByGrade();
+              break;
+            default:
+              System.out.println("Student Not exits");
+          }
+
+          }
+
+
+
+
 
     }
 }
