@@ -3,10 +3,10 @@ import java.util.*;
 public class SplitCSVByContinent
 {
     public static void main(String[] args) {
-        // Replace "input.csv" with the path to your CSV file
+
+            //Add path of your csv file
             String inputFile = "C:\\Users\\Ankita Gomkar\\Downloads\\export.csv";
 
-          //File inputFile = new File("export.csv");
 
         try (BufferedReader reader = new BufferedReader(new FileReader(inputFile))) {
             String header = reader.readLine();
@@ -16,10 +16,11 @@ public class SplitCSVByContinent
 
             while ((line = reader.readLine()) != null) {
                 String[] parts = line.split(",");
-                String continentIndex = parts[3]; // Replace <index_of_continent_column> with the index of your continent column
+                String continentIndex = parts[3];
                 String outputFile = continentIndex + ".csv";
 
                 // Check if writer for this continent already exists
+
                 BufferedWriter writer = continentWriters.get(continentIndex);
                 if (writer == null) {
                     writer = new BufferedWriter(new FileWriter(outputFile));
